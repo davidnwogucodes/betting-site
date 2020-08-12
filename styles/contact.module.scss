@@ -1,0 +1,25 @@
+.contactbody {
+  width: 100vw;
+  height: 100vh;
+  background-color: #0e413d;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding-top: 250px;
+  align-items: center;
+  .contactimage {
+    width: 1400px;
+    height: 100vh;
+    background-image: url(/ball.jpg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    .contactmain {
+      width: 500px;
+      height: 200px;
+      background-color: #f57f1a;
+      top: 500px;
+      left: 100px;
+    }
+  }
+}

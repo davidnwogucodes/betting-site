@@ -1,19 +1,18 @@
 import React from "react";
-import style from "../styles/signup.module.scss";
 import { TextField, InputAdornment, Button } from "@material-ui/core";
 import { Dialpad } from "@material-ui/icons";
 import VpnKeyIcon from "@material-ui/icons/VpnKey";
 
 export default function signup() {
   return (
-    <section className={style.signup}>
-      <div className={style.signuppart}>
-        <span className={style.signupicon} />
-        <h3 className={style.signuptitle}>EA Bet</h3>
-        <p className={style.signuptxt}>Master of your own game</p>
-        <form className={style.signupform}>
+    <section className="signup">
+      <div className="signuppart">
+        <span className="signupicon" />
+        <h3 className="signuptitle">EA Bet</h3>
+        <p className="signuptxt">Master of your own game</p>
+        <form className="signupform">
           <TextField
-            className={style.signupphonenumber}
+            className="signupphonenumber"
             variant="outlined"
             label="Phone Number"
             required
@@ -27,7 +26,7 @@ export default function signup() {
             }}
           />
           <TextField
-            className={style.signupphonenumber}
+            className="signupphonenumber"
             variant="outlined"
             label="Betting key"
             required
@@ -41,7 +40,7 @@ export default function signup() {
             }}
           />
           <TextField
-            className={style.signupphonenumber}
+            className="signupphonenumber"
             variant="outlined"
             label="Confirm betting key"
             required
@@ -54,7 +53,7 @@ export default function signup() {
               ),
             }}
           />
-          <Button className={style.signupbutton}>Get started</Button>
+          <Button className="signupbutton">Get started</Button>
         </form>
       </div>
     </section>

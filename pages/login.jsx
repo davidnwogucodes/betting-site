@@ -1,5 +1,4 @@
 import React from "react";
-import style from "../styles/login.module.scss";
 import { TextField, InputAdornment, Button } from "@material-ui/core";
 import { Dialpad } from "@material-ui/icons";
 import { useState } from "react";
@@ -7,18 +6,18 @@ import { useState } from "react";
 export default function Login() {
   const [phone_number, setPhone_number] = useState("");
   return (
-    <section className={style.Login}>
-      <div className={style.loginpart}>
-        <span className={style.icon} />
-        <h3 className={style.title}>EA Bet</h3>
-        <p className={style.txt}>Master of your own game</p>
-        <form className={style.form}>
+    <section className="Login">
+      <div className="loginpart">
+        <span className="icon" />
+        <h3 className="title">EA Bet</h3>
+        <p className="txt">Master of your own game</p>
+        <form className="form">
           <TextField
-            className={style.phonenumber}
+            className="phonenumber"
             variant="outlined"
             label="Phone Number"
             required
-            value={phone_number}
+            value="phone_number"
             onChange={(e) => {
               setPhone_number(e.target.value);
             }}
@@ -31,7 +30,7 @@ export default function Login() {
               ),
             }}
           />
-          <Button className={style.button}>Get started</Button>
+          <Button className="button">Get started</Button>
         </form>
       </div>
     </section>

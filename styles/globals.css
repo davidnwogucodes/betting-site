@@ -17,3 +17,8 @@ body {
   overflow: hidden;
   background-color: black;
 }
+
+@font-face {
+  src: url(/Pangolin-Regular.ttf);
+  font-family: pagolin;
+}

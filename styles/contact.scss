@@ -1,25 +1,117 @@
 .contactbody {
   width: 100vw;
   height: 100vh;
-  background-color: #0e413d;
+  position: fixed;
+  top: 0;
+  left: 0;
   display: flex;
-  justify-content: center;
-  align-content: center;
-  padding-top: 250px;
-  align-items: center;
-  .contactimage {
-    width: 1400px;
-    height: 100vh;
-    background-image: url(/ball.jpg);
+  overflow: hidden;
+  justify-content: flex-end;
+  overflow-y: auto;
+  border-radius: 10px;
+  background-color: white;
+
+  &::before {
+    content: "";
+    position: fixed;
+    top: -5vw;
+    left: -5vh;
+    width: 110vw;
+    height: 110vh;
+    display: flex;
+    background-image: url("/bg1.jpg");
     background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    .contactmain {
+    background-size: cover;
+    opacity: 0.2;
+    filter: blur(15px);
+  }
+
+  .contactmain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+    height: 500px;
+    background-color: #fff;
+    top: 180px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      background-image: url("/item1.jpg");
+      background-position: center;
+      background-size: cover;
+      opacity: 0.1;
+      background-color: #FF9800;
+      box-shadow: 0 0 100px 50px #ffffffcf;
+    }
+
+    .contacttext {
       width: 500px;
-      height: 200px;
-      background-color: #f57f1a;
-      top: 500px;
-      left: 100px;
+      height: 450px;
+      background-color: transparent;
+      font-size: large;
+      font-family: pagolin;
+      color: #ffb74c;
+
+      .content {
+        display: flex;
+        margin-top: 50px;
+        background-color: transparent;
+        flex-wrap: wrap;
+
+        .address {
+          width: 200px;
+          height: 150px;
+          background-color: transparent;
+          font-weight: normal;
+          font-size: small;
+          font-family: pagolin;
+        }
+
+        .contactemail {
+          width: 199px;
+          height: 100px;
+          background-color: transparent;
+          font-family: pagolin;
+          font-size: small;
+        }
+      }
+
+      .socialmedia {
+        top: 40px;
+        width: 400px;
+        height: 160px;
+        background-color: transparent;
+        display: flex;
+        padding-top: 100px;
+
+        .instagram {
+          width: 140px;
+          height: 25px;
+          background-color: tranparent;
+          font-family: pagolin;
+        }
+
+        .twitter {
+          width: 140px;
+          height: 25px;
+          background-color: transparent;
+          font-family: pagolin;
+        }
+
+        .facebook {
+          width: 140px;
+          height: 25px;
+          background-color: transparent;
+          font-family: pagolin;
+        }
+      }
     }
   }
 }

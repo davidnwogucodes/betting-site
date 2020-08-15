@@ -1,65 +1,120 @@
-import React from 'react';
-import ShortTextIcon from '@material-ui/icons/ShortText';
-import WhatshotIcon from '@material-ui/icons/Whatshot';
-import SportsSoccerIcon from '@material-ui/icons/SportsSoccer';
-import SportsBasketballIcon from '@material-ui/icons/SportsBasketball';
-import SportsBaseballIcon from '@material-ui/icons/SportsBaseball';
-import SportsVolleyballIcon from '@material-ui/icons/SportsVolleyball';
-import SportsCricketIcon from '@material-ui/icons/SportsCricket';
-import SportsRugbyIcon from '@material-ui/icons/SportsRugby';
-import SportsMmaIcon from '@material-ui/icons/SportsMma';
-import PoolIcon from '@material-ui/icons/Pool';
-import SportsEsportsIcon from '@material-ui/icons/SportsEsports';
-import SportsMotorsportsIcon from '@material-ui/icons/SportsMotorsports';
-import WavesIcon from '@material-ui/icons/Waves';
+import React, { useEffect, useState } from "react";
+import {
+  SportsEsports,
+  ShortText,
+  Assessment,
+  AccountBalanceWallet,
+  Settings,
+  Sports,
+  Dashboard,
+  ArrowBack,
+} from "@material-ui/icons";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { useDispatch, useSelector } from "react-redux";
+import { setNavOpen } from "../store/action";
 
 export default function Navbar() {
-    return (
-        <div className="navbackground">
-            <div className="navcenter">
-                <div className="naviconbar">
-                    <div className="bar">
-                        <ShortTextIcon></ShortTextIcon>
-                    </div>
-                    <div className="firebar">
-                        <WhatshotIcon></WhatshotIcon>
-                    </div>
-                    <div className="ballbar">
-                        <SportsSoccerIcon></SportsSoccerIcon>
-                    </div>
-                    <div className="basketballbar">
-                        <SportsBasketballIcon></SportsBasketballIcon>
-                    </div>
-                    <div className="baseballbar">
-                        <SportsBaseballIcon></SportsBaseballIcon>
-                    </div>
-                    <div className="cricketbar">
-                        <SportsVolleyballIcon></SportsVolleyballIcon>
-                    </div>
-                    <div className="bottlebar">
-                        <SportsCricketIcon></SportsCricketIcon>
-                    </div>
-                    <div className="rugbybar">
-                        <SportsRugbyIcon></SportsRugbyIcon>
-                    </div>
-                    <div className="glovesbar">
-                        <SportsMmaIcon></SportsMmaIcon>
-                    </div>
-                    <div className="softball">
-                        <PoolIcon></PoolIcon>
-                    </div>
-                    <div className="gamepad">
-                        <SportsEsportsIcon></SportsEsportsIcon>
-                    </div>
-                    <div className="cricgloves">
-                        <SportsMotorsportsIcon></SportsMotorsportsIcon>
-                    </div>
-                    <div className="offsideflag">
-                        <WavesIcon></WavesIcon>
-                    </div>
-                </div>
-            </div>
+  const dispatch = useDispatch();
+  const navOpen = useSelector((state) => state.initial.navOpen);
+  const { pathname, push } = useRouter();
+  useEffect(() => {
+    if (pathname === "/dashboard" || pathname === "/dashboard/") {
+      push("/dashboard/personal");
+    }
+  }, [pathname]);
+  return (
+    <div className={navOpen ? "navcenter active" : "navcenter"}>
+      <div className="naviconbar">
+        <div
+          className={navOpen ? "bar active" : "bar"}
+          onClick={() => {
+            dispatch(setNavOpen());
+          }}
+        >
+          <span className="shortbar" />
+          <span className="shortbar" />
+          <span className="shortbar" />
         </div>
-
-    );
+        <Link href="/dashboard/personal">
+          <a
+            className={
+              pathname === "/dashboard/personal"
+                ? "navlinks active"
+                : "navlinks"
+            }
+          >
+            <div className="cont">
+              <Dashboard />
+              <span className="txt">Dashboard</span>
+            </div>
+          </a>
+        </Link>
+        <Link href="/dashboard/my-games">
+          <a
+            className={
+              pathname === "/dashboard/my-games"
+                ? "navlinks active"
+                : "navlinks"
+            }
+          >
+            <div className="cont">
+              <SportsEsports />
+              <span className="txt">My Games</span>
+            </div>
+          </a>
+        </Link>
+        <Link href="/dashboard/matches">
+          <a
+            className={
+              pathname === "/dashboard/matches" ? "navlinks active" : "navlinks"
+            }
+          >
+            <div className="cont">
+              <Sports />
+              <span className="txt">Matches</span>
+            </div>
+          </a>
+        </Link>
+        <Link href="/dashboard/record">
+          <a
+            className={
+              pathname === "/dashboard/record" ? "navlinks active" : "navlinks"
+            }
+          >
+            <div className="cont">
+              <Assessment />
+              <span className="txt">Game Records</span>
+            </div>
+          </a>
+        </Link>
+        <Link href="/dashboard/wallet">
+          <a
+            className={
+              pathname === "/dashboard/wallet" ? "navlinks active" : "navlinks"
+            }
+          >
+            <div className="cont">
+              <AccountBalanceWallet />
+              <span className="txt">Wallet</span>
+            </div>
+          </a>
+        </Link>
+        <Link href="/dashboard/settings">
+          <a
+            className={
+              pathname === "/dashboard/settings"
+                ? "navlinks active"
+                : "navlinks"
+            }
+          >
+            <div className="cont">
+              <Settings />
+              <span className="txt">settings</span>
+            </div>
+          </a>
+        </Link>
+      </div>
+    </div>
+  );
 }

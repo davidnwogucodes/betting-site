@@ -5,9 +5,16 @@ import "../styles/login.scss";
 import "../styles/signup.scss";
 import "../styles/contact.scss";
 import "../styles/navbar.scss";
+import "../styles/dashboard.scss";
+import { Provider as ReduxProvider } from "react-redux";
+import store from "../store";
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+  return (
+    <ReduxProvider store={store}>
+      <Component {...pageProps} />
+    </ReduxProvider>
+  );
 }
 
 export default MyApp;

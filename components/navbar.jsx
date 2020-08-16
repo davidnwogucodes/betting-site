@@ -13,108 +13,177 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
 import { setNavOpen } from "../store/action";
+import { Tooltip } from "@material-ui/core";
 
 export default function Navbar() {
   const dispatch = useDispatch();
   const navOpen = useSelector((state) => state.initial.navOpen);
+  const theme = useSelector((state) => state.initial.theme);
+  useEffect(() => {
+    document.querySelectorAll(".theme").forEach((themecon) => {
+      themecon.classList.remove("light-mode");
+      themecon.classList.remove("dark-mode");
+      themecon.classList.add(theme);
+    });
+  }, [theme]);
   const { pathname, push } = useRouter();
   useEffect(() => {
     if (pathname === "/dashboard" || pathname === "/dashboard/") {
       push("/dashboard/personal");
     }
+    setTimeout(() => {
+      dispatch(setNavOpen(false));
+    }, 200);
   }, [pathname]);
   return (
-    <div className={navOpen ? "navcenter active" : "navcenter"}>
-      <div className="naviconbar">
-        <div
-          className={navOpen ? "bar active" : "bar"}
-          onClick={() => {
-            dispatch(setNavOpen());
-          }}
-        >
-          <span className="shortbar" />
-          <span className="shortbar" />
-          <span className="shortbar" />
-        </div>
-        <Link href="/dashboard/personal">
-          <a
-            className={
-              pathname === "/dashboard/personal"
-                ? "navlinks active"
-                : "navlinks"
-            }
-          >
-            <div className="cont">
-              <Dashboard />
-              <span className="txt">Dashboard</span>
-            </div>
-          </a>
-        </Link>
-        <Link href="/dashboard/my-games">
-          <a
-            className={
-              pathname === "/dashboard/my-games"
-                ? "navlinks active"
-                : "navlinks"
-            }
-          >
-            <div className="cont">
-              <SportsEsports />
-              <span className="txt">My Games</span>
-            </div>
-          </a>
-        </Link>
-        <Link href="/dashboard/matches">
-          <a
-            className={
-              pathname === "/dashboard/matches" ? "navlinks active" : "navlinks"
-            }
-          >
-            <div className="cont">
-              <Sports />
-              <span className="txt">Matches</span>
-            </div>
-          </a>
-        </Link>
-        <Link href="/dashboard/record">
-          <a
-            className={
-              pathname === "/dashboard/record" ? "navlinks active" : "navlinks"
-            }
-          >
-            <div className="cont">
-              <Assessment />
-              <span className="txt">Game Records</span>
-            </div>
-          </a>
-        </Link>
-        <Link href="/dashboard/wallet">
-          <a
-            className={
-              pathname === "/dashboard/wallet" ? "navlinks active" : "navlinks"
-            }
-          >
-            <div className="cont">
-              <AccountBalanceWallet />
-              <span className="txt">Wallet</span>
-            </div>
-          </a>
-        </Link>
-        <Link href="/dashboard/settings">
-          <a
-            className={
-              pathname === "/dashboard/settings"
-                ? "navlinks active"
-                : "navlinks"
-            }
-          >
-            <div className="cont">
-              <Settings />
-              <span className="txt">settings</span>
-            </div>
-          </a>
-        </Link>
+    <>
+      <div
+        className={navOpen ? "bar active" : "bar"}
+        onClick={() => {
+          dispatch(setNavOpen());
+        }}
+      >
+        <span className="shortbar" />
+        <span className="shortbar" />
+        <span className="shortbar" />
       </div>
-    </div>
+
+      <div
+        className={
+          navOpen
+            ? `navcenter active theme ${theme}`
+            : `navcenter theme ${theme}`
+        }
+      >
+        <div className="naviconbar">
+          <Link href="/dashboard/personal">
+            <a
+              className={
+                pathname === "/dashboard/personal"
+                  ? "navlinks active theme"
+                  : "navlinks theme"
+              }
+            >
+              <div className="cont">
+                <Tooltip
+                  arrow
+                  className={navOpen ? "tippy hide" : "tippy"}
+                  title="Personal"
+                  placement="right"
+                >
+                  <Dashboard />
+                </Tooltip>
+                <span className="txt">Dashboard</span>
+              </div>
+            </a>
+          </Link>
+          <Link href="/dashboard/my-games">
+            <a
+              className={
+                pathname === "/dashboard/my-games"
+                  ? "navlinks active theme"
+                  : "navlinks theme"
+              }
+            >
+              <div className="cont">
+                <Tooltip
+                  arrow
+                  className={navOpen ? "tippy hide" : "tippy"}
+                  title="My Games"
+                  placement="right"
+                >
+                  <SportsEsports />
+                </Tooltip>
+                <span className="txt">My Games</span>
+              </div>
+            </a>
+          </Link>
+          <Link href="/dashboard/matches">
+            <a
+              className={
+                pathname === "/dashboard/matches"
+                  ? "navlinks active theme"
+                  : "navlinks theme"
+              }
+            >
+              <div className="cont">
+                <Tooltip
+                  arrow
+                  className={navOpen ? "tippy hide" : "tippy"}
+                  title="Matches"
+                  placement="right"
+                >
+                  <Sports />
+                </Tooltip>
+                <span className="txt">Matches</span>
+              </div>
+            </a>
+          </Link>
+          <Link href="/dashboard/record">
+            <a
+              className={
+                pathname === "/dashboard/record"
+                  ? "navlinks active theme"
+                  : "navlinks theme"
+              }
+            >
+              <div className="cont">
+                <Tooltip
+                  arrow
+                  className={navOpen ? "tippy hide" : "tippy"}
+                  title="Games Record"
+                  placement="right"
+                >
+                  <Assessment />
+                </Tooltip>
+                <span className="txt">Game Records</span>
+              </div>
+            </a>
+          </Link>
+          <Link href="/dashboard/wallet">
+            <a
+              className={
+                pathname === "/dashboard/wallet"
+                  ? "navlinks active theme"
+                  : "navlinks theme"
+              }
+            >
+              <div className="cont">
+                <Tooltip
+                  arrow
+                  className={navOpen ? "tippy hide" : "tippy"}
+                  title="Wallet"
+                  placement="right"
+                >
+                  <AccountBalanceWallet />
+                </Tooltip>
+                <span className="txt">Wallet</span>
+              </div>
+            </a>
+          </Link>
+          <Link href="/dashboard/settings">
+            <a
+              className={
+                pathname === "/dashboard/settings"
+                  ? "navlinks active theme"
+                  : "navlinks theme"
+              }
+            >
+              <div className="cont">
+                <Tooltip
+                  arrow
+                  className={navOpen ? "tippy hide" : "tippy"}
+                  title="Settings"
+                  placement="right"
+                >
+                  <Settings />
+                </Tooltip>
+                <span className="txt">settings</span>
+              </div>
+            </a>
+          </Link>
+        </div>
+      </div>
+    </>
   );
 }

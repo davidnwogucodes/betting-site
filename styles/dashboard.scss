@@ -1,3 +1,5 @@
+@import "./variable.scss";
+
 .dashboard {
     position: fixed;
     top: 0;
@@ -5,8 +7,17 @@
     width: 100vw;
     height: 100vh;
     display: flex;
-    background-color: #f3f3f7;
+    flex-direction: column;
+    background-color: white;
     border-radius: 10px;
     overflow: hidden;
     overflow-y: auto;
+
+    &.light-mode {
+        background-color: $lightBG;
+    }
+
+    &.dark-mode {
+        background-color: $darkBG;
+    }
 }

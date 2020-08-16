@@ -9,7 +9,7 @@ export default function () {
     <>
       <Navbar />
       <section
-        className="dashboard"
+        className="dashboard theme"
         onClick={() => {
           dispatch(setNavOpen(false));
         }}

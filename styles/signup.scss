@@ -1,3 +1,5 @@
+@import "./variable.scss";
+
 .signup {
   width: 100vw;
   height: 100vh;
@@ -5,9 +7,29 @@
   justify-content: center;
   align-content: center;
   flex-direction: column;
-  background-color: #ff9800;
+  background-color: #f7f7f7;
+  overflow: hidden;
+  border-radius: 10px;
+  overflow-y: auto;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: -20px;
+    content: "";
+    width: 112vw;
+    height: 30vh;
+    min-height: 100px;
+    max-height: 250px;
+    display: flex;
+    background-color: $defaultColor;
+    border-radius: 0 0 50% 50%;
+  }
+
   .signuppart {
-    width: 700px;
+    width: 70vw;
+    min-width: 300px;
+    max-width: 700px;
     height: 500px;
     background-color: white;
     display: flex;
@@ -16,50 +38,61 @@
     border-radius: 7px;
     flex-direction: column;
     padding: 10px 20px;
+    box-shadow: 0px 10px 15px #0000001f;
+
     .signupicon {
-      width: 150px;
-      height: 150px;
+      width: 70px;
+      height: 70px;
       display: flex;
       background-image: url(/betsite.png);
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
     }
+
     .signuptitle {
       width: fit-content;
       height: fit-content;
       min-width: fit-content;
       min-height: fit-content;
       display: flex;
-      font-family: monospace;
+      font-family: exep_bold;
       text-transform: uppercase;
-      font-size: 30px;
+      font-size: 20px;
       font-weight: 800;
     }
+
     .signuptxt {
       width: fit-content;
       height: fit-content;
       min-width: fit-content;
       min-height: fit-content;
       display: flex;
-      font-family: monospace;
+      font-family: exep;
       text-transform: uppercase;
       font-size: 12px;
       font-weight: 800;
-      color: #d92727;
+      color: $defaultColor;
     }
+
     .signupform {
       width: 100%;
       height: fit-content;
       display: flex;
       flex-direction: column;
       align-items: center;
-      .signupphonenumber {
+
+      .inputBox {
         margin-top: 20px;
         width: 80%;
         min-width: 280px;
         max-width: 500px;
+
+        .icon_ {
+          color: $defaultColor;
+        }
       }
+
       .signupbutton {
         display: flex;
         align-self: center;
@@ -70,6 +103,27 @@
         min-width: 180px;
         max-width: 300px;
         height: 50px;
+
+        &:hover {
+          background-color: $defaultColor;
+        }
+      }
+
+      .link {
+        width: 100%;
+        height: fit-content;
+        align-items: center;
+        display: inline-flex;
+        margin: 20px 0 0 0;
+        justify-content: center;
+        text-align: center;
+
+        a {
+          color: $defaultColor;
+          font-size: 14px;
+          text-transform: capitalize;
+          font-family: exep_bold;
+        }
       }
     }
   }

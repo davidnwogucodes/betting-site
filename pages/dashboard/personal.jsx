@@ -19,43 +19,43 @@ import {
 
 const data = [
   {
-    name: "Page A",
+    name: "7th",
     uv: 4000,
     pv: 2400,
     amt: 2400,
   },
   {
-    name: "Page B",
+    name: "8th",
     uv: 3000,
     pv: 1398,
     amt: 2210,
   },
   {
-    name: "Page C",
+    name: "9th",
     uv: 2000,
     pv: 9800,
     amt: 2290,
   },
   {
-    name: "Page D",
+    name: "10th",
     uv: 2780,
     pv: 3908,
     amt: 2000,
   },
   {
-    name: "Page E",
+    name: "11th",
     uv: 1890,
     pv: 4800,
     amt: 2181,
   },
   {
-    name: "Page F",
+    name: "12th",
     uv: 2390,
     pv: 3800,
     amt: 2500,
   },
   {
-    name: "Page G",
+    name: "13th",
     uv: 3490,
     pv: 4300,
     amt: 2100,
@@ -125,7 +125,12 @@ export default function () {
               </div>
               <span className="query">today</span>
             </div>
-            <ResponsiveContainer width="100%" height={200}>
+            <ResponsiveContainer
+              width="100%"
+              height={350}
+              minHeight={300}
+              maxHeight={450}
+            >
               <AreaChart
                 data={data}
                 margin={{ top: 10, right: 30, left: 0, bottom: 0 }}

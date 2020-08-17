@@ -3,6 +3,7 @@ import Navbar from "../../components/navbar";
 import Head from "next/head";
 import { useDispatch } from "react-redux";
 import { setNavOpen } from "../../store/action";
+import Panel from "../../components/panel";
 
 export default function () {
   const dispatch = useDispatch();
@@ -16,8 +17,9 @@ export default function () {
         }}
       >
         <Head>
-          <title>EA: betting :: Personal</title>
+          <title>Troisplay :: Personal</title>
         </Head>
+        <Panel />
       </section>
     </>
   );

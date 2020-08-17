@@ -1,7 +1,6 @@
 import React from "react";
 import Navbar from "../../components/navbar";
 import Head from "next/head";
-import Particles from "react-particles-js";
 import { CoinIcon, PlayIcon } from "../../components/icons";
 import { Fab } from "@material-ui/core";
 import {
@@ -10,13 +9,20 @@ import {
   Payment,
   Redeem,
 } from "@material-ui/icons";
+import { setNavOpen } from "../../store/action";
+import { useDispatch } from "react-redux";
 
 export default function () {
+  const dispatch = useDispatch();
   return (
-    <section className="dashboard theme Wallet">
+    <section
+      className="dashboard theme Wallet"
+      onClick={() => {
+        dispatch(setNavOpen(false));
+      }}
+    >
       <Head>
-        <title>EA: betting :: Wallet</title>
-        <script src="https://cdn.rawgit.com/progers/pathseg/master/pathseg.js"></script>
+        <title>Troisplay :: Wallet</title>
       </Head>
       <Navbar />
       <section className="first">

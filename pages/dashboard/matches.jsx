@@ -15,7 +15,7 @@ export default function () {
         }}
       >
         <Head>
-          <title>EA: betting :: Matches</title>
+          <title>Troisplay :: Matches</title>
         </Head>
       </section>
     </>

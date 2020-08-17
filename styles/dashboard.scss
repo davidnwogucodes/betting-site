@@ -12,6 +12,21 @@
     border-radius: 10px;
     overflow: hidden;
     overflow-y: auto;
+    padding: 0 0 0 60px;
+
+    &::before {
+        position: absolute;
+        top: 0;
+        left: -20px;
+        content: "";
+        width: 112vw;
+        height: 30vh;
+        min-height: 100px;
+        max-height: 250px;
+        display: flex;
+        background-color: $defaultColor;
+        border-radius: 0 0 50% 50%;
+    }
 
     &.light-mode {
         background-color: $lightBG;

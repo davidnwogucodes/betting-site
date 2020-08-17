@@ -15,17 +15,17 @@ import { useDispatch } from "react-redux";
 export default function () {
   const dispatch = useDispatch();
   return (
-    <section
-      className="dashboard theme Wallet"
-      onClick={() => {
-        dispatch(setNavOpen(false));
-      }}
-    >
+    <>
       <Head>
         <title>Troisplay :: Wallet</title>
       </Head>
       <Navbar />
-      <section className="first">
+      <section
+        className="dashboard wallet theme Wallet"
+        onClick={() => {
+          dispatch(setNavOpen(false));
+        }}
+      >
         <div className="left">
           <h3 className="title_txt theme">Wallet</h3>
           <div className="pay_card">
@@ -83,6 +83,6 @@ export default function () {
           </div>
         </div>
       </section>
-    </section>
+    </>
   );
 }

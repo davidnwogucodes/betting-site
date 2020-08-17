@@ -1,12 +1,17 @@
 @import "./variable.scss";
 
 .Panel {
-    width: 250px;
+    width: 220px;
     height: fit-content;
     min-height: fit-content;
     display: flex;
     flex-direction: column;
-    padding: 100px 0 50px 0;
+    padding: 0 0 50px 0;
+
+    @media (max-width: 800px) {
+        width: calc(100%);
+        min-width: 100%;
+    }
 
     .user {
         width: 100%;

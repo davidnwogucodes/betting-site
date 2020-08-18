@@ -12,9 +12,9 @@ export default function Footer() {
           <h3>Troisplay</h3>
         </div>
         <p>
-          Reekta is breaking the cycle of believe that only large organizations
-          can afford the tools and systems for digital transformation and that
-          digital transformation is exclsuively for large organizations
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, est quasi
+          quisquam delectus neque, dolores esse adipisci consequatur voluptates
+          tenetur vo.
         </p>
         <div className="links">
           <Fab className="link">

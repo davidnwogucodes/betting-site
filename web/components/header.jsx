@@ -13,8 +13,8 @@ export default function Header() {
         <Link href="/#about">
           <a className="link">about</a>
         </Link>
-        <Link href="/#support">
-          <a className="link">support</a>
+        <Link href="/contact">
+          <a className="link">contact</a>
         </Link>
         <Link href="/signup">
           <a className="link">Join</a>

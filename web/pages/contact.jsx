@@ -10,6 +10,8 @@ import {
 import Head from "next/head";
 import Header from "../components/header";
 import { useState } from "react";
+import Link from "next/link";
+import Footer from "../components/footer";
 
 export default function Contact() {
   const [name, setname] = useState("");
@@ -179,7 +181,7 @@ export default function Contact() {
           </div>
         </div>
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

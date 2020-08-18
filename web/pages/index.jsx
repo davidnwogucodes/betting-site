@@ -3,6 +3,7 @@ import Header from "../components/header";
 import Link from "next/link";
 import { SportsEsports } from "@material-ui/icons";
 import { Fab } from "@material-ui/core";
+import Footer from "../components/footer";
 
 export default function () {
   return (
@@ -240,6 +241,7 @@ export default function () {
           </Link>
         </div>
       </div>
+      <Footer />
     </section>
   );
 }

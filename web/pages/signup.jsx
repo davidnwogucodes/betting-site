@@ -62,10 +62,14 @@ export default function signup() {
             label="Betting key"
             required
             value={key}
+            error={key.length !== 6}
+            helperText={
+              key.length !== 6 ? "Your key should be 6 digits long." : ""
+            }
             onChange={(e) => {
               if (
                 /^[0-9]*$/g.test(e.target.value) &&
-                e.target.value.length < 10
+                e.target.value.length < 7
               ) {
                 setKey(e.target.value);
               }

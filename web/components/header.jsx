@@ -3,15 +3,17 @@ import Link from "next/link";
 export default function Header() {
   return (
     <header>
-      <span className="title">Troisplay</span>
+      <Link href="/">
+        <a className="title">Troisplay</a>
+      </Link>
       <div className="links">
-        <Link href="#">
+        <Link href="/#">
           <a className="link">home</a>
         </Link>
-        <Link href="#about">
+        <Link href="/#about">
           <a className="link">about</a>
         </Link>
-        <Link href="#support">
+        <Link href="/#support">
           <a className="link">support</a>
         </Link>
         <Link href="/signup">

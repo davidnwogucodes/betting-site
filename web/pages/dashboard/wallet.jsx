@@ -28,7 +28,7 @@ export default function () {
       >
         <div className="left">
           <h3 className="title_txt theme">Wallet</h3>
-          <div className="pay_card">
+          <div className="pay_card theme">
             <div className="icon">
               <span className="front">
                 <PlayIcon />

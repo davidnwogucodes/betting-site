@@ -59,13 +59,13 @@ export default function () {
       <div className="second">
         <div className="content">
           <div className="main_txt">
-            integrate your workflow with reekta consulting
+            integrate your workflow with Troisplay consulting
           </div>
         </div>
         <div className="container">
           <div className="block">
             <span className="img" role="img" />
-            <h3 className="title">Reekta Business Manager</h3>
+            <h3 className="title">Troisplay Business Manager</h3>
             <p>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit
               dolorum quam quisquam totam qui eaque ipsa ullam nam, repudiandae
@@ -74,7 +74,7 @@ export default function () {
           </div>
           <div className="block">
             <span className="img" role="img" />
-            <h3 className="title">Reekta Process Manager</h3>
+            <h3 className="title">Troisplay Process Manager</h3>
             <p>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit
               dolorum quam quisquam totam qui eaque ipsa ullam nam, repudiandae
@@ -83,7 +83,7 @@ export default function () {
           </div>
           <div className="block">
             <span className="img" role="img" />
-            <h3 className="title">Reekta Business App</h3>
+            <h3 className="title">Troisplay Business App</h3>
             <p>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit
               dolorum quam quisquam totam qui eaque ipsa ullam nam, repudiandae
@@ -212,7 +212,7 @@ export default function () {
           <div className="content">
             <h3 className="title">Work Digitilization & process automation</h3>
             <p>
-              With our Reekta Business Manager, organizations especially SMEs
+              With our Troisplay Business Manager, organizations especially SMEs
               are able to digitize repetitive tasks/ processes as defined in
               their process documentations. This repetitive processes account
               for more than 80% of an organizations man hour while contributing
@@ -226,10 +226,10 @@ export default function () {
         </div>
       </div>
       <div className="forth">
-        <div className="title">Start using reekta today</div>
+        <div className="title">Start using Troisplay today</div>
         <p>
           get started in seconds, integrating and customizing your workflow into
-          reekta
+          Troisplay
         </p>
         <div className="btns">
           <Link href="/get-started">

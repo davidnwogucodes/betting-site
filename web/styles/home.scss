@@ -436,15 +436,15 @@
         }
 
         &:nth-of-type(1) .img {
-          background-image: url(/assets/business_manager.png);
+          background-image: url(/img.png);
         }
 
         &:nth-of-type(2) .img {
-          background-image: url(/assets/process_manager.png);
+          background-image: url(/img2.png);
         }
 
         &:nth-of-type(3) .img {
-          background-image: url(/assets/phone.png);
+          background-image: url(/img4.png);
         }
 
         .title {
@@ -456,7 +456,7 @@
           margin: 0 0 10px 0;
           font-size: 15px;
           font-family: exep_bold;
-          color: #565555;
+          color: #171717;
         }
 
         p {
@@ -466,8 +466,8 @@
           height: auto;
           display: block;
           text-align: center;
-          font-size: 12px;
-          color: #9b9fb3;
+          font-size: 14px;
+          color: #8c8c8c;
         }
       }
     }
@@ -640,12 +640,11 @@
         height: 300px;
         display: flex;
         align-self: center;
-        background-image: url(/assets/process_manager_view.png);
+        background-image: url(/img3.png);
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
         animation: animate_wavy 15s ease-in-out 0s infinite normal forwards;
-        opacity: 0.5;
 
         @media (max-width: 650px) {
           width: 100%;

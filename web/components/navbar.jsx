@@ -47,7 +47,6 @@ export default function Navbar() {
         <span className="shortbar" />
         <span className="shortbar" />
       </div>
-
       <div
         className={
           navOpen

@@ -26,8 +26,8 @@ export default function () {
           </h3>
           <h2 className="txt">master of your games</h2>
           <span className="txt">
-            place orders from top chefs nation wide in your location and get it
-            delivered to you all from the comform of you home.
+            Here is a platform that brings your love for money and passion for
+            competition all in one place.
           </span>
           <div className="action">
             <div className="txt_">

@@ -24,6 +24,11 @@ header {
         font-size: 20px;
         color: #171717;
 
+        @media (max-width: 500px) {
+            width: 100%;
+            justify-content: center;
+        }
+
         &::after {
             content: "";
             width: 10px;
@@ -42,6 +47,10 @@ header {
         height: 100%;
         display: flex;
         justify-content: space-around;
+
+        @media (max-width: 500px) {
+            display: none;
+        }
 
         .link {
             flex: 1;

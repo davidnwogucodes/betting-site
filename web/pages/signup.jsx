@@ -3,6 +3,7 @@ import { TextField, InputAdornment, Button } from "@material-ui/core";
 import { Call, VpnKey, Person } from "@material-ui/icons";
 import Link from "next/link";
 import { useState } from "react";
+import Header from "../components/header";
 
 export default function signup() {
   const [full_name, setFull_name] = useState("");
@@ -13,6 +14,7 @@ export default function signup() {
       <Head>
         <title>Troisplay :: Signup</title>
       </Head>
+      <Header />
       <div className="signuppart">
         <span className="signupicon" />
         <h3 className="signuptitle">Troisplay :: Signup</h3>

@@ -3,6 +3,7 @@ import { TextField, InputAdornment, Button } from "@material-ui/core";
 import { Call, VpnKey } from "@material-ui/icons";
 import { useState } from "react";
 import Link from "next/link";
+import Header from "../components/header";
 
 export default function Login() {
   const [phone_number, setPhone_number] = useState("");
@@ -12,6 +13,7 @@ export default function Login() {
       <Head>
         <title>Troisplay :: Login</title>
       </Head>
+      <Header />
       <div className="loginpart">
         <span className="icon" />
         <h3 className="title">Troisplay :: Login</h3>

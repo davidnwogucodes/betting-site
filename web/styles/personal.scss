@@ -6,7 +6,7 @@
     padding-bottom: 50px;
 
     .container {
-        width: calc(100% - 480px);
+        width: calc(100% - 500px);
         height: fit-content;
         min-height: fit-content;
         display: flex;
@@ -28,6 +28,7 @@
             min-height: fit-content;
             display: flex;
             flex-wrap: wrap;
+            justify-content: space-around;
 
 
 
@@ -66,6 +67,10 @@
                 background-color: white;
                 margin: 10px;
                 box-shadow: 0px 5px 10px #00000026;
+
+                @media (max-width: 600px) {
+                    width: 280px;
+                }
 
                 .con {
                     width: 100%;

@@ -14,6 +14,10 @@
     overflow-y: auto;
     padding: 0 0 0 60px;
 
+    @media (max-width: 500px) {
+        padding-left: 0;
+    }
+
     &::before {
         position: absolute;
         top: 0;

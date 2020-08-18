@@ -18,30 +18,30 @@ export default function Panel() {
       </div>
       <div className="content">
         <Button className="btn">
-          <span className="holder">
+          <span className="holder theme">
             <Sports />
             <span className="tt">My Games</span>
           </span>
         </Button>
         <Button className="btn">
-          <span className="holder">
+          <span className="holder theme">
             <History />
             <span className="tt">My Record</span>
           </span>
         </Button>
         <Button className="btn">
-          <span className="holder">
+          <span className="holder theme">
             <Edit />
             <span className="tt">Edit Profile</span>
           </span>
         </Button>
         <Button className="btn">
-          <span className="holder">
+          <span className="holder theme">
             <Settings />
             <span className="tt">My settings</span>
           </span>
         </Button>
       </div>
-    </div >
+    </div>
   );
 }

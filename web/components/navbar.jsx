@@ -14,6 +14,7 @@ import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
 import { setNavOpen, setTheme } from "../store/action";
 import { Tooltip } from "@material-ui/core";
+import { DarkIcon, LightIcon } from "./icons";
 
 export default function Navbar() {
   const dispatch = useDispatch();
@@ -55,15 +56,25 @@ export default function Navbar() {
         }
       >
         <div className="main_title_">
-          <span className="titlename theme">
-            Troisplay
-          </span>
-          <div className="themechanger light" onClick={() => {
-            dispatch(setTheme(false))
-          }}></div>
-          <div className="themechanger dark" onClick={() => {
-            dispatch(setTheme(true))
-          }}></div>
+          <span className="titlename theme">Troisplay</span>
+          <div
+            className="themechanger light"
+            onClick={() => {
+              dispatch(setTheme(false));
+              dispatch(setNavOpen(false));
+            }}
+          >
+            <DarkIcon />
+          </div>
+          <div
+            className="themechanger dark"
+            onClick={() => {
+              dispatch(setNavOpen(false));
+              dispatch(setTheme(true));
+            }}
+          >
+            <LightIcon />
+          </div>
         </div>
         <div className="naviconbar">
           <Link href="/dashboard/personal">

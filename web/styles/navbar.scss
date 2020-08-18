@@ -12,7 +12,19 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
- 
+
+    @media (max-width: 500px) {
+        .shortbar {
+            background-color: white !important;
+        }
+
+        &.active {
+            .shortbar {
+                background-color: $defaultColor !important;
+            }
+        }
+    }
+
 
     .shortbar {
         position: absolute;
@@ -107,45 +119,65 @@
         width: 250px;
     }
 
-.main_title_ {
-    position: absolute;
-    top: 0;
-    z-index: 1000;
-    left: 40px;
-    width:210px;
-    height:45px;
-    display: flex;
-    justify-content: flex-end;
-    padding: 0 10px;
-    .titlename{
-        font-size: 15px;
-        height: 100%;
-        align-items: center;
+    .main_title_ {
+        position: absolute;
+        top: 0;
+        z-index: 1000;
+        left: 40px;
+        width: 210px;
+        height: 65px;
         display: flex;
-        padding-right: 10px;
-        font-family: exep_bold; 
-        &.dark-mode {
-            color: white
+        justify-content: flex-end;
+        padding: 0 10px;
+
+        .titlename {
+            font-size: 15px;
+            height: 100%;
+            align-items: center;
+            display: flex;
+            padding-right: 10px;
+            font-size: 16px;
+            font-family: exep_bold;
+
+            &.dark-mode {
+                color: white
+            }
+
+            &.light-mode {
+                color: black
+            }
         }
-        &.light-mode {
-            color: black
+
+        .themechanger {
+            width: 30px;
+            height: 30px;
+            margin: 0 3px;
+            align-self: center;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            svg {
+                width: 20px;
+                height: 20px;
+                align-self: center;
+                display: flex;
+            }
+
+            &.light {
+                box-shadow: -4px 4px 7px #00000017, 3px -5px 6px #ffffff1a;
+                background-color: black;
+            }
+
+            &.dark {
+                box-shadow: 4px 3px 4px #00000017, -5px -5px 8px #d9d5d542;
+                background-color: white;
+            }
         }
     }
-     
-   .themechanger {
-        width:20px;
-        height:20px;
-        top:15px;
-        border-radius: 50px;
-        cursor: pointer;
-        &.light{
-            background-color: black;
-        }
-        &.dark{
-            background-color: grey;
-        }
-    }
-}
+
     .naviconbar {
         width: 100%;
         height: 100%;

@@ -1,3 +1,6 @@
+@import "./variable.scss";
+
+
 header {
     width: 100vw;
     height: 60px;
@@ -16,9 +19,10 @@ header {
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        font-family: monospace;
+        font-family: exep_bold;
         font-weight: 700;
         font-size: 20px;
+        color: #171717;
 
         &::after {
             content: "";
@@ -44,12 +48,13 @@ header {
             display: flex;
             height: 100%;
             align-items: center;
-            font-family: monospace;
             justify-content: center;
             text-align: center;
             text-transform: capitalize;
             font-size: 14px;
+            font-family: exep_bold;
             cursor: pointer;
+            color: #171717;
         }
     }
 }

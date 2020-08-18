@@ -1,3 +1,5 @@
+@import "./variable.scss";
+
 .Home {
   width: 100vw;
   height: 100vh;
@@ -11,7 +13,21 @@
   background-color: white;
 
   &::before {
+    position: absolute;
+    top: 0;
+    left: -20px;
     content: "";
+    width: 112vw;
+    height: 30vh;
+    min-height: 100px;
+    max-height: 250px;
+    display: flex;
+    background-color: $defaultColor;
+    border-radius: 0 0 50% 50%;
+  }
+
+  &::efore {
+    // content: "";
     position: fixed;
     top: -5vw;
     left: -5vh;
@@ -40,6 +56,12 @@
       min-height: 550px;
       max-height: 650px;
       overflow: hidden;
+
+      @media (max-width: 800px) {
+        width: 100%;
+        min-width: 100%;
+        margin-top: 40px;
+      }
 
       .img {
         position: absolute;
@@ -166,9 +188,114 @@
         }
 
         &:nth-of-type(5) {
-          background-image: url(/img4.png);
+          background-image: url(/img5.png);
           top: 200vh;
           animation: animate5 40s ease-out infinite normal forwards;
+        }
+      }
+    }
+
+    .right {
+      width: 45%;
+      min-width: 300px;
+      height: fit-content;
+      min-height: fit-content;
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+      padding: 0 5%;
+
+      @media (max-width: 800px) {
+        width: 100%;
+        min-width: 100%;
+      }
+
+      h3.txt {
+        width: 100%;
+        height: fit-content;
+        min-height: fit-content;
+        display: flex;
+        font-size: 34px;
+        text-transform: uppercase;
+        font-family: exep_bold;
+        justify-content: center;
+        text-align: center;
+        font-weight: 500;
+      }
+
+      h2.txt {
+        width: 100%;
+        height: fit-content;
+        min-height: fit-content;
+        display: flex;
+        justify-content: center;
+        font-size: 20px;
+        color: $defaultColor;
+        font-family: exep_bold;
+      }
+
+      span.txt {
+        width: 100%;
+        height: fit-content;
+        min-height: fit-content;
+        display: flex;
+        justify-content: center;
+        font-size: 16px;
+        color: #797979;
+      }
+
+      .action {
+        width: 100%;
+        height: 70px;
+        display: flex;
+        justify-content: center;
+        margin: 10px 0 0 0;
+
+        .txt_ {
+          width: fit-content;
+          max-width: 180px;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          font-size: 15px;
+          text-transform: uppercase;
+          color: $defaultColor;
+
+          div {
+            font-size: 20px;
+            font-family: exep_bold;
+            color: #202020;
+          }
+        }
+
+        .btn_ {
+          width: 170px;
+          min-width: 170px;
+          height: 50px;
+          font-size: 14px;
+          background-color: #171717;
+          color: white;
+
+          * {
+            color: white;
+            font-family: exep_bold;
+          }
+
+          a {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            text-align: center;
+            text-transform: uppercase;
+            justify-content: center;
+            line-height: 50px;
+
+            svg {
+              display: flex;
+              align-self: center;
+              margin: 0 2px;
+            }
+          }
         }
       }
     }

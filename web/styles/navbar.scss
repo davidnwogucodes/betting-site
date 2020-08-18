@@ -1,0 +1,221 @@
+@import "./variable.scss";
+
+.bar {
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    z-index: 5000;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    .shortbar {
+        position: absolute;
+        width: 30px;
+        height: 3px;
+        display: flex;
+        background-color: $defaultColor;
+        transition-timing-function: cubic-bezier(0.74, 0.2, 0.43, 1.35);
+
+        &:nth-of-type(1) {
+            width: 15px;
+            left: 8px;
+            transform: rotate(0deg) translate(0px, 0px);
+        }
+
+        &:nth-of-type(2) {
+            width: 15px;
+            right: 12px;
+            transition-duration: 0.9s;
+        }
+
+        &:nth-of-type(3) {
+            width: 15px;
+            top: calc(50% + 5px);
+            left: calc(50% - 12px);
+            transform: rotate(0deg) translate(0px, 0px);
+
+        }
+    }
+
+    &.active {
+        .shortbar {
+            &:nth-of-type(1) {
+                width: 12px;
+                display: flex;
+                left: 8px;
+                transform: rotate(-45deg) translate(3px, -2px);
+            }
+
+            &:nth-of-type(2) {
+                width: 22px;
+                display: flex;
+            }
+
+            &:nth-of-type(3) {
+                width: 12px;
+                display: flex;
+                transform: rotate(45deg) translate(-4px, -1px);
+            }
+        }
+    }
+}
+
+.navcenter {
+    position: fixed;
+    z-index: 3000;
+    width: 55px;
+    padding: 0 5px;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+    transition-duration: 0.8s;
+    transition-timing-function: cubic-bezier(0.74, 0.2, 0.43, 1.35);
+    box-shadow: 7px 1px 20px #0000000d;
+
+    @media (max-width: 500px) {
+        left: -400px;
+        transition-timing-function: cubic-bezier(0.24, -0.09, 0.4, 0.88);
+
+        &.active {
+            left: 0px;
+        }
+    }
+
+    * {
+        user-select: none;
+    }
+
+    &.light-mode {
+        background-color: $lightNG;
+    }
+
+    &.dark-mode {
+        background-color: $darkNG;
+    }
+
+    &.active {
+        width: 250px;
+    }
+
+    .naviconbar {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 50px 0 0 0;
+
+
+        &>* {
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            cursor: pointer;
+            border-radius: 5px;
+
+            &:hover {
+                background-color: rgba($color: #000000, $alpha: 0.02);
+            }
+        }
+
+        .navlinks {
+            width: 100%;
+            padding: 0 30px 0 0;
+            height: 45px;
+            display: flex;
+            justify-content: flex-start;
+            margin: 5px 0;
+            background-color: transparent;
+            border-radius: 15px;
+            box-shadow: 0 0 25px #0000000d;
+            border: 2px transparent solid;
+
+            &.light-mode {
+                border: 2px #f3f3f3 solid;
+
+                .txt {
+                    color: $lightNGTxt !important;
+                }
+            }
+
+            &.dark-mode {
+                border: 2px rgb(73, 73, 73) solid;
+
+                .txt {
+                    color: $darkNGTxt !important;
+                }
+            }
+
+            &:nth-of-type(1) {
+                margin-top: 20px;
+            }
+
+            .cont {
+                width: 250px;
+                min-width: 250px;
+                height: 100%;
+                display: flex;
+                align-items: center;
+
+                .tippy.hide {
+                    pointer-events: none;
+                }
+
+                svg {
+                    position: relative;
+                    margin: 8.5px 23.5px 8.5px 8.5px;
+                    width: 24px;
+                    height: 24px;
+                    fill: $defaultColor;
+                    transition-duration: 0.6s;
+                    transform: scale(1);
+
+                    * {
+                        transition-duration: 0s;
+                    }
+                }
+
+                .txt {
+                    width: fit-content;
+                    height: 100%;
+                    line-height: 45px;
+                    display: flex;
+                    color: #171717;
+                }
+
+            }
+
+            &:hover,
+            &.active {
+                background-color: $defaultColor;
+
+                .cont {
+                    .txt {
+                        color: #171717 !important;
+                    }
+
+                    svg {
+                        fill: #ffffff;
+                        transform: scale(1.2);
+                    }
+                }
+            }
+
+            &:hover {
+                background-color: lighten($color: $defaultColor, $amount: 10);
+            }
+
+            &.active {
+                &:hover {
+                    background-color: darken($color: $defaultColor, $amount: 2);
+                }
+            }
+        }
+    }
+}

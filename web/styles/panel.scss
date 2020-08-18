@@ -41,6 +41,12 @@
             align-items: center;
             font-family: exep_bold;
             font-size: 15px;
+            &.dark-mode{
+                color:$darkBGTxt;
+            }
+            &.light-mode{
+                color:$lightBGTxt;
+            }
         }
 
         .bal {
@@ -49,6 +55,12 @@
             align-items: center;
             font-family: exep_bold;
             font-size: 20px;
+             &.dark-mode{
+                color:$darkBGTxt;
+            }
+            &.light-mode{
+                color:$lightBGTxt;
+            }
 
             strong {
                 font-family: monospace;

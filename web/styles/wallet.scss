@@ -57,11 +57,19 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background-color: $defaultColor;
+           
             border-radius: 10px;
             margin: 0 10px 20px 10px;
             overflow: hidden;
-            box-shadow: 0px 6px 20px #c5000054;
+            
+            &.dark-mode{
+                background-color: #161717;
+                box-shadow: 0px 6px 20px #00000054;
+            }
+            &.light-mode{
+                background-color: $defaultColor;
+                box-shadow: 0px 6px 20px #c5000054;
+            }
 
             &::before {
                 position: absolute;

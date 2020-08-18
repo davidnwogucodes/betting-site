@@ -12,7 +12,7 @@ import {
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
-import { setNavOpen } from "../store/action";
+import { setNavOpen, setTheme } from "../store/action";
 import { Tooltip } from "@material-ui/core";
 
 export default function Navbar() {
@@ -54,6 +54,17 @@ export default function Navbar() {
             : `navcenter theme ${theme}`
         }
       >
+        <div className="main_title_">
+          <span className="titlename theme">
+            Troisplay
+          </span>
+          <div className="themechanger light" onClick={() => {
+            dispatch(setTheme(false))
+          }}></div>
+          <div className="themechanger dark" onClick={() => {
+            dispatch(setTheme(true))
+          }}></div>
+        </div>
         <div className="naviconbar">
           <Link href="/dashboard/personal">
             <a

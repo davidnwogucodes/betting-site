@@ -7,8 +7,8 @@ export default function Panel() {
     <div className="Panel">
       <div className="user">
         <span className="avatar" />
-        <span className="name">Daniel Amos</span>
-        <span className="bal">
+        <span className="name theme">Daniel Amos</span>
+        <span className="bal theme">
           <strong>&#8358;</strong>29876
         </span>
       </div>
@@ -42,6 +42,6 @@ export default function Panel() {
           </span>
         </Button>
       </div>
-    </div>
+    </div >
   );
 }

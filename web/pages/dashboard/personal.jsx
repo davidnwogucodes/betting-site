@@ -82,7 +82,7 @@ export default function () {
             <div className="main_title">
               <h3 className="title">GamePlay OverView</h3>
             </div>
-            <Button className="track">
+            <Button className="track theme">
               <span className="con">
                 <span className="count">8545</span>
                 <span className="title_">winnings</span>
@@ -91,7 +91,7 @@ export default function () {
                 </span>
               </span>
             </Button>
-            <Button className="track">
+            <Button className="track theme">
               <span className="con">
                 <span className="count">85</span>
                 <span className="title_">losses</span>
@@ -100,7 +100,7 @@ export default function () {
                 </span>
               </span>
             </Button>
-            <Button className="track">
+            <Button className="track theme">
               <span className="con">
                 <span className="count">
                   <strong>&#8358;</strong>85876
@@ -112,7 +112,7 @@ export default function () {
               </span>
             </Button>
           </div>
-          <div className="container_map">
+          <div className="container_map theme">
             <div className="main_head">
               <h3 className="title_">
                 <strong>Your</strong>Game analysis
@@ -170,7 +170,7 @@ export default function () {
         </div>
         <div className="container_not">
           <h3 className="title_">Requests</h3>
-          <div className="noti">
+          <div className="noti theme">
             <div className="main">
               <div className="date">
                 <span>03:00 am</span>

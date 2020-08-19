@@ -16,7 +16,7 @@ import { setNavOpen, setTheme } from "../store/action";
 import { Tooltip } from "@material-ui/core";
 import { DarkIcon, LightIcon } from "./icons";
 
-export default function Navbar() {
+function Navbar() {
   const dispatch = useDispatch();
   const navOpen = useSelector((state) => state.initial.navOpen);
   const theme = useSelector((state) => state.initial.theme);
@@ -26,6 +26,10 @@ export default function Navbar() {
       themecon.classList.remove("dark-mode");
       themecon.classList.add(theme);
     });
+    let defaultTheme = localStorage.getItem("theme") ?? "light-mode";
+    if (defaultTheme !== theme) {
+      dispatch(setTheme(defaultTheme));
+    }
   }, [theme]);
   const { pathname, push } = useRouter();
   useEffect(() => {
@@ -62,6 +66,7 @@ export default function Navbar() {
             onClick={() => {
               dispatch(setTheme(false));
               dispatch(setNavOpen(false));
+              localStorage.setItem("theme", "dark-mode");
             }}
           >
             <DarkIcon />
@@ -71,6 +76,7 @@ export default function Navbar() {
             onClick={() => {
               dispatch(setNavOpen(false));
               dispatch(setTheme(true));
+              localStorage.setItem("theme", "light-mode");
             }}
           >
             <LightIcon />
@@ -115,28 +121,7 @@ export default function Navbar() {
                 >
                   <SportsEsports />
                 </Tooltip>
-                <span className="txt">My Games</span>
-              </div>
-            </a>
-          </Link>
-          <Link href="/dashboard/matches">
-            <a
-              className={
-                pathname === "/dashboard/matches"
-                  ? "navlinks active theme"
-                  : "navlinks theme"
-              }
-            >
-              <div className="cont">
-                <Tooltip
-                  arrow
-                  className={navOpen ? "tippy hide" : "tippy"}
-                  title="Matches"
-                  placement="right"
-                >
-                  <Sports />
-                </Tooltip>
-                <span className="txt">Matches</span>
+                <span className="txt">Play Game</span>
               </div>
             </a>
           </Link>
@@ -182,6 +167,27 @@ export default function Navbar() {
               </div>
             </a>
           </Link>
+          <Link href="/dashboard/matches">
+            <a
+              className={
+                pathname === "/dashboard/matches"
+                  ? "navlinks active theme"
+                  : "navlinks theme"
+              }
+            >
+              <div className="cont">
+                <Tooltip
+                  arrow
+                  className={navOpen ? "tippy hide" : "tippy"}
+                  title="Matches"
+                  placement="right"
+                >
+                  <Sports />
+                </Tooltip>
+                <span className="txt">My referrals</span>
+              </div>
+            </a>
+          </Link>
           <Link href="/dashboard/settings">
             <a
               className={
@@ -208,3 +214,5 @@ export default function Navbar() {
     </>
   );
 }
+
+export default Navbar;

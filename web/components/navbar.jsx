@@ -14,7 +14,7 @@ import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
 import { setNavOpen, setTheme } from "../store/action";
 import { Tooltip } from "@material-ui/core";
-import { DarkIcon, LightIcon } from "./icons";
+import { DarkIcon, LightIcon, ReferalIcon } from "./icons";
 
 function Navbar() {
   const dispatch = useDispatch();
@@ -167,10 +167,10 @@ function Navbar() {
               </div>
             </a>
           </Link>
-          <Link href="/dashboard/matches">
+          <Link href="/dashboard/referal">
             <a
               className={
-                pathname === "/dashboard/matches"
+                pathname === "/dashboard/referal"
                   ? "navlinks active theme"
                   : "navlinks theme"
               }
@@ -179,10 +179,10 @@ function Navbar() {
                 <Tooltip
                   arrow
                   className={navOpen ? "tippy hide" : "tippy"}
-                  title="Matches"
+                  title="Referal"
                   placement="right"
                 >
-                  <Sports />
+                  <ReferalIcon />
                 </Tooltip>
                 <span className="txt">My referrals</span>
               </div>

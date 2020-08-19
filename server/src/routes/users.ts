@@ -4,23 +4,23 @@ import userModel from "../model/users";
 import jwt, { sign, verify } from "jsonwebtoken";
 import { genSaltSync, hashSync, compareSync } from "bcryptjs";
 import { config } from "dotenv";
-var multer = require("multer");
-var storage = multer.diskStorage({
-  destination: function (_req: Request, _file: any, cb: Function) {
-    cb(null, "dist/uploads");
-  },
-  filename: function (_req: Request, file: any, cb: Function) {
-    cb(
-      null,
-      file.fieldname +
-        "-" +
-        Date.now() +
-        `.${file.mimetype.split("/")[1] ?? "png"}`
-    );
-  },
-});
+// var multer = require("multer");
+// var storage = multer.diskStorage({
+//   destination: function (_req: Request, _file: any, cb: Function) {
+//     cb(null, "dist/uploads");
+//   },
+//   filename: function (_req: Request, file: any, cb: Function) {
+//     cb(
+//       null,
+//       file.fieldname +
+//         "-" +
+//         Date.now() +
+//         `.${file.mimetype.split("/")[1] ?? "png"}`
+//     );
+//   },
+// });
 
-var upload = multer({ storage: storage });
+// var upload = multer({ storage: storage });
 
 config();
 const salt = genSaltSync(10);
@@ -28,11 +28,15 @@ const secret = process.env.SECRET || "powemre$#$VESdfver#$#4dfmdpfv";
 const userRoute = Router();
 
 userRoute.post("/", async (req: Request, res: Response) => {
-  const { full_name, phonenumber, key } = req.body;
+  const {
+    full_name,
+    phone_number,
+    key,
+  }: { full_name: string; phone_number: string; key: string } = req.body;
   let hashedKey = hashSync(key, salt);
   let new_user = new userModel({
     full_name,
-    phone_number: phonenumber,
+    phone_number: phone_number.replace(/(\s)|[+]/g, ""),
     key: hashedKey,
   });
   new_user
@@ -54,9 +58,12 @@ userRoute.post("/", async (req: Request, res: Response) => {
 
 userRoute.post("/login", async (req: Request, res: Response) => {
   try {
-    const { phone_number, key }: string | any = req.body;
-    let user: Document | any = await userModel.findOne({
+    const {
       phone_number,
+      key,
+    }: { phone_number: string; key: string } = req.body;
+    let user: Document | any = await userModel.findOne({
+      phone_number: phone_number.replace(/(\s)|[+]/g, ""),
     });
     if (!user) {
       res

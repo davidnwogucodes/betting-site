@@ -1,11 +1,11 @@
-import express, { Application } from "express";
+import express, { Application, Request, Response } from "express";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
 import customRoute from "./routes";
 import path from "path";
-import fs from "fs";
+import fs, { ReadStream } from "fs";
 import _ from "lodash";
 
 dotenv.config();
@@ -16,15 +16,17 @@ const db: string | number = process.env.DATABASE_URI;
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: false }));
 server.use(cors());
-server.use("/uploads", (req, res) => {
+server.use("/media", (req: Request, res: Response) => {
   try {
-    let acceptable = ["png", "jpg", "jpeg"];
-    let fileLocation = path.join(__dirname, req.originalUrl);
+    let acceptable: string[] = ["png", "jpg", "jpeg"];
+    let fileLocation: string = path.join(__dirname, req.originalUrl);
     if (!acceptable.includes(_.last(fileLocation.split(".")))) {
       res.status(404).send("404");
       return;
     }
-    let steam = fs.createReadStream(path.join(__dirname, req.originalUrl));
+    let steam: ReadStream = fs.createReadStream(
+      path.join(__dirname, req.originalUrl)
+    );
     steam.on("open", () => {
       steam.pipe(res);
     });

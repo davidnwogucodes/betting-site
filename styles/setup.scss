@@ -1,0 +1,94 @@
+@import "./variable.scss";
+
+
+.Setup {
+    width: 100%;
+    height: fit-content;
+    min-height: fit-content;
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+
+    .first {
+        width: 90%;
+        height: fit-content;
+        min-height: fit-content;
+        padding-top: 370px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        border-radius: 10px 10px 0 0;
+        align-self: center;
+        overflow-y: auto;
+
+        &::before {
+            content: "";
+            width: calc(100% + 20px);
+            height: 310px;
+            display: flex;
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            background-color: #ffffffc2;
+            border-radius: 10px 10px 0 0;
+            filter: blur(10px);
+        }
+
+        .image_picker {
+            position: absolute;
+            top: -160px;
+            width: 100%;
+            height: fit-content;
+            min-height: fit-content;
+            display: flex;
+            flex-direction: column;
+
+            .image_picker_view {
+                width: 100px;
+                height: 100px;
+                margin: 0 auto;
+                background-position: center;
+                background-size: cover;
+                justify-content: center;
+                display: flex;
+                border-radius: 50%;
+                background-color: #ededed;
+                overflow: hidden;
+
+                svg {
+                    display: flex;
+                    align-self: center;
+                    fill: $defaultColor;
+                }
+            }
+
+            .image_picker_input {
+                position: absolute;
+                opacity: 0;
+            }
+
+            .image_picker_btn {
+                width: 170px;
+                height: 40px;
+                background-color: #404040;
+                color: white;
+                font-size: 12px;
+                margin: 10px auto 5px auto;
+
+                &:hover {
+                    background-color: #585858;
+                }
+
+                .image_picker_label {
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    text-align: center;
+                    line-height: 30px;
+                    font-family: exep_bold;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,42 @@
+@import "./variable.scss";
+
+.dashboard {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    overflow-y: auto;
+    padding: 0 0 0 60px;
+
+    @media (max-width: 500px) {
+        padding-left: 0;
+    }
+
+    &::before {
+        position: absolute;
+        top: 0;
+        left: -20px;
+        content: "";
+        width: 112vw;
+        height: 30vh;
+        min-height: 100px;
+        max-height: 250px;
+        display: flex;
+        background-color: $defaultColor;
+        border-radius: 0 0 50% 50%;
+    }
+
+    &.light-mode {
+        background-color: $lightBG;
+    }
+
+    &.dark-mode {
+        background-color: $darkBG;
+    }
+}

@@ -1,0 +1,151 @@
+@import "./variable.scss";
+
+.Referal {
+    padding-top: 100px;
+    padding-bottom: 50px;
+    justify-content: center;
+
+    .container_first {
+        width: 90%;
+        max-width: 1200px;
+        height: fit-content;
+        min-height: fit-content;
+        display: flex;
+        padding-bottom: 20px;
+        box-shadow: 0px 7px 10px #0000001a;
+        flex-direction: column;
+        border-radius: 5px;
+        margin-top: 50px;
+
+        &:nth-of-type(1) {
+            margin-top: 0;
+        }
+
+        &.dark-mode {
+            background-color: #4d4d4d;
+            color: white;
+        }
+
+        &.light-mode {
+            background-color: white;
+            color: black;
+        }
+
+        .title {
+            width: fit-content;
+            height: fit-content;
+            display: flex;
+            user-select: none;
+            pointer-events: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 10px 0 5px 10px;
+            font-family: exep_bold;
+            font-size: 14px;
+            color: $defaultColor;
+        }
+
+        .content {
+            width: 100%;
+            height: 200px;
+            min-height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            span {
+                width: fit-content;
+                height: fit-content;
+                display: flex;
+
+                &.icon {
+                    width: 70px;
+                    height: 70px;
+                    border-radius: 50%;
+                    background-color: $defaultColor;
+                    background-image: url(/icon.png);
+                    background-position: center;
+                    background-size: cover;
+                    margin-right: 15px;
+                }
+
+                &.count {
+                    font-size: 30px;
+                    font-family: exep_bold;
+                }
+            }
+        }
+
+        .content_ {
+            width: 100%;
+            height: fit-content;
+            min-height: fit-content;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            border-top: 2px rgba($color: #000000, $alpha: 0.6) solid;
+            padding-top: 10px;
+
+            .item {
+                width: calc(100% / 4 - 20px);
+                min-width: 150px;
+                height: 70px;
+                display: flex;
+                flex-direction: column;
+                color: currentColor;
+                align-items: center;
+
+                .name {
+                    width: 100%;
+                    height: fit-content;
+                    min-height: fit-content;
+                    display: flex;
+                    padding-left: 10px;
+                    text-transform: uppercase;
+                    font-size: 11px;
+                    opacity: 0.8;
+                    font-family: exep_bold;
+                }
+
+                .btn_ {
+                    width: 90%;
+                    height: 45px;
+                    background-color: $defaultColor;
+                    color: currentColor;
+                    align-self: center;
+                    margin-top: 10px;
+
+                    * {
+                        font-size: 14px;
+                        font-family: exep_bold;
+                    }
+
+                    .icon {
+                        width: 25px;
+                        height: 25px;
+                        border-radius: 50%;
+                        background-color: $defaultColor;
+                        background-image: url(/icon.png);
+                        background-position: center;
+                        opacity: 0.4;
+                        background-size: cover;
+                        margin-right: 15px;
+                    }
+                }
+
+                .value {
+                    width: 100%;
+                    padding-top: 10px;
+                    height: fit-content;
+                    min-height: fit-content;
+                    display: flex;
+                    padding-left: 10px;
+                    text-transform: uppercase;
+                    font-size: 22px;
+                    font-family: exep_bold;
+                }
+            }
+        }
+    }
+}

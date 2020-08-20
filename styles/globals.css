@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  position: relative;
+  transition: all 0.4s;
+  outline: none;
+  text-decoration: none;
+  border: none;
+  font-family: exep_reg;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+  background-color: black;
+}
+
+#__next {
+  width: 100%;
+  height: 100%;
+}
+
+@font-face {
+  src: url(/Pangolin-Regular.ttf);
+  font-family: pagolin;
+}
+
+@font-face {
+  src: url(/fonts/Expletus_Sans/ExpletusSans-Medium.ttf);
+  font-family: exep;
+}
+
+@font-face {
+  src: url(/fonts/Expletus_Sans/ExpletusSans-Regular.ttf);
+  font-family: exep_reg;
+}
+
+@font-face {
+  src: url(/fonts/Expletus_Sans/ExpletusSans-Bold.ttf);
+  font-family: exep_bold;
+}
+
+@font-face {
+  src: url(/fonts/Expletus_Sans/ExpletusSans-Italic.ttf);
+  font-family: exep_itl;
+}
+
+@font-face {
+  src: url(/fonts/Changa/Changa-VariableFont_wght.ttf);
+  font-family: chag;
+}

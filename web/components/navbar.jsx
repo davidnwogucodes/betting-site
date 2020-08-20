@@ -33,8 +33,13 @@ function Navbar() {
   }, [theme]);
   const { pathname, push } = useRouter();
   useEffect(() => {
-    if (pathname === "/dashboard" || pathname === "/dashboard/") {
+    let logged = Boolean(JSON.parse(localStorage.getItem("logged")));
+
+    if (logged && (pathname === "/dashboard" || pathname === "/dashboard/")) {
       push("/dashboard/personal");
+    }
+    if (!logged) {
+      push("/dashboard");
     }
     setTimeout(() => {
       dispatch(setNavOpen(false));

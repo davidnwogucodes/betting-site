@@ -9,8 +9,11 @@ import "../styles/dashboard.scss";
 import "../styles/personal.scss";
 import "../styles/panel.scss";
 import "../styles/wallet.scss";
-import "react-toastify/dist/ReactToastify.css";
+import "../styles/referal.scss";
 import "../styles/dashboardheader.scss";
+import "../styles/settings.scss";
+import "../styles/setup.scss";
+import "react-toastify/dist/ReactToastify.css";
 
 import { Provider as ReduxProvider } from "react-redux";
 import store from "../store";

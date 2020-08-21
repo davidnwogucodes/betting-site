@@ -13,6 +13,8 @@ import "../styles/referal.scss";
 import "../styles/dashboardheader.scss";
 import "../styles/settings.scss";
 import "../styles/setup.scss";
+import "../styles/gamespanel.scss";
+import "../styles/myrecord.scss";
 import "react-toastify/dist/ReactToastify.css";
 
 import { Provider as ReduxProvider } from "react-redux";

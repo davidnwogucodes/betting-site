@@ -32,19 +32,19 @@ function Navbar() {
     }
   }, [theme]);
   const { pathname, push } = useRouter();
-  useEffect(() => {
-    let logged = Boolean(JSON.parse(localStorage.getItem("logged")));
+  // useEffect(() => {
+  //   let logged = Boolean(JSON.parse(localStorage.getItem("logged")));
 
-    if (logged && (pathname === "/dashboard" || pathname === "/dashboard/")) {
-      push("/dashboard/personal");
-    }
-    if (!logged) {
-      push("/dashboard");
-    }
-    setTimeout(() => {
-      dispatch(setNavOpen(false));
-    }, 200);
-  }, [pathname]);
+  //   if (logged && (pathname === "/dashboard" || pathname === "/dashboard/")) {
+  //     push("/dashboard/personal");
+  //   }
+  //   if (!logged) {
+  //     push("/dashboard");
+  //   }
+  //   setTimeout(() => {
+  //     dispatch(setNavOpen(false));
+  //   }, 200);
+  // }, [pathname]);
   return (
     <>
       <div
